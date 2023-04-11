@@ -45,6 +45,11 @@ manually with something like this:
             (message (concat "adding eglot to " hook-name))
             (add-hook (intern hook-name) #'eglot-ensure))))))))
 
+(require 'eglot)
+(add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c++-mode-hook 'eglot-ensure)
+
 ;; add eglot to existing programming modes when eglot is loaded.
 (with-eval-after-load "eglot"
   (crafted-ide--add-eglot-hooks eglot-server-programs))

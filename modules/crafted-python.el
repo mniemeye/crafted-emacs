@@ -82,7 +82,7 @@
 
 
 ;;; python mode
-(customize-set-variable 'python-indent-guess-indent-offset-verbose nil)
+(customize-set-variable 'python-indent-guess-indent-offset-verbose t)
 
 
 
